@@ -12,9 +12,7 @@ class Solution:
                     return slow + 1;
             
             slow += 1
-            
             nums[slow] = nums[fast]
-            
             fast += 1
             
         return slow + 1
