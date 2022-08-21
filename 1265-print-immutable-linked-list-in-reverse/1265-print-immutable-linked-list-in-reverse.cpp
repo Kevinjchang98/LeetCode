@@ -11,17 +11,8 @@
 class Solution {
 public:
     void printLinkedListInReverse(ImmutableListNode* head) {
-        stack<ImmutableListNode*> s;
-        
-        ImmutableListNode* curr = head;
-        while (curr != nullptr) {
-            s.push(curr);
-            curr = curr->getNext();
-        }
-        
-        while (!s.empty()) {
-            s.top()->printValue();
-            s.pop();
-        }
+        head 
+            ? printLinkedListInReverse(head->getNext()), head->printValue()
+            : void();
     }
 };
