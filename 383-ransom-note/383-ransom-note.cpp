@@ -3,11 +3,11 @@ public:
     bool canConstruct(string ransomNote, string magazine) {
         int l[26] = {};
         
-        for (char c : magazine) {
+        for (auto c : magazine) {
             l[c - 'a']++;
         }
         
-        for (char c : ransomNote) {
+        for (auto c : ransomNote) {
             if (--l[c - 'a'] == -1) 
                 return false;
         }
