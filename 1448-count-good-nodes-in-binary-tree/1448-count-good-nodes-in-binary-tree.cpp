@@ -17,13 +17,9 @@ public:
         if (root)
             ans++;    
         
-        if (root->left)
-            ans += helper(root->left, root->val);
-        
-        if (root->right)
-            ans += helper(root->right, root->val);
-        
-        return ans;
+        return ans 
+            + helper(root->left, root->val) 
+            + helper(root->right, root->val);
     }
     
     int helper(TreeNode* root, int max) {
