@@ -12,12 +12,10 @@
 class Solution {
 public:
     int goodNodes(TreeNode* root) {
-        int ans = 0;
+        if (!root)
+            return 0;
         
-        if (root)
-            ans++;    
-        
-        return ans 
+        return 1 
             + helper(root->left, root->val) 
             + helper(root->right, root->val);
     }
