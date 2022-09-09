@@ -25,7 +25,6 @@ public:
             && image[sr][sc + 1] == oldColor)
             floodFill(image, sr, sc + 1, newColor);
             
-        
         return image;
     }
 };
