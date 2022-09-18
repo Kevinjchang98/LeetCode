@@ -17,12 +17,15 @@ public:
                 r = m1;
         }
         
-        int a = max(l > 0 ? nums1[l - 1] : INT_MIN, k - l >= 0 ? nums2[k - l] : INT_MAX);
+        int a = max(l > 0 ? nums1[l - 1] : INT_MIN,
+                    k - l >= 0 ? nums2[k - l] : INT_MAX);
 
         if ((nums1.size() + nums2.size()) % 2 != 0) {
             return a;
         } else {
-            int b = min(l < nums1.size() ? nums1[l] : INT_MAX, k - l + 1 < nums2.size() ? nums2[k - l + 1] : INT_MAX);
+            int b = min(l < nums1.size() ? nums1[l] : INT_MAX,
+                        k - l + 1 < nums2.size() ? nums2[k - l + 1] : INT_MAX);
+            
             return (a + b) / 2.0;
         }
     }
