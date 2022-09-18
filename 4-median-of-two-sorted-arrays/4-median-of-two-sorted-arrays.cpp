@@ -20,7 +20,7 @@ public:
         int a = max(l > 0 ? nums1[l - 1] : INT_MIN,
                     k - l >= 0 ? nums2[k - l] : INT_MAX);
 
-        if (((nums1.size() + nums2.size()) & 1) == 1) {
+        if ((nums1.size() + nums2.size()) & 1) {
             return a;
         } else {
             int b = min(l < nums1.size() ? nums1[l] : INT_MAX,
