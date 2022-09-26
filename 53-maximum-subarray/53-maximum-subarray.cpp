@@ -6,8 +6,13 @@ public:
         
         for (int i = 1; i < nums.size(); i++) {
             int num = nums[i];
-            curr = max(num, curr + num);
-            ans = max(ans, curr);
+            if (num > curr + num)
+                curr = num;
+            else
+                curr = curr + num;
+            
+            if (curr > ans)
+                ans = curr;
         }
         
         return ans;
