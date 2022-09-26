@@ -5,7 +5,8 @@ public:
         int ans = curr;
         
         for (int i = 1; i < nums.size(); i++) {
-            curr = max(nums[i], curr + nums[i]);
+            int num = nums[i];
+            curr = max(num, curr + num);
             ans = max(ans, curr);
         }
         
