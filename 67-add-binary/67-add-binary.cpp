@@ -13,19 +13,9 @@ public:
             int curr = carry 
                 + (i >= 0 ? (a[i--] - '0') : 0)
                 + (j >= 0 ? (b[j--] - '0') : 0);
-            if (curr == 3) {
-                carry = 1;
-                ans = "1" + ans;
-            } else if (curr == 2) {
-                carry = 1;
-                ans = "0" + ans;
-            } else if (curr == 1) {
-                carry = 0;
-                ans = "1" + ans;
-            } else {
-                carry = 0;
-                ans = "0" + ans;
-            }
+            
+            carry = curr > 1 ? 1 : 0;
+            ans = (curr & 1 ? "1" : "0") + ans;
         }
         
         
