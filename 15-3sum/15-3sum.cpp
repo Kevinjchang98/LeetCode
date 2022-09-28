@@ -14,11 +14,6 @@ public:
                     int comp = target - nums[j];
 
                     if (m.count(comp)) {
-                        //vector<int> toInsert = {nums[i], nums[j], comp};
-                        //sort(toInsert.begin(), toInsert.end());
-
-                        //if (!(find(ans.begin(), ans.end(), toInsert) != ans.end()))
-                        //    ans.push_back(toInsert);
                         ans.push_back({nums[i], comp, nums[j]});
                         while (j + 1 < nums.size() && nums[j] == nums[j + 1])
                             ++j;
