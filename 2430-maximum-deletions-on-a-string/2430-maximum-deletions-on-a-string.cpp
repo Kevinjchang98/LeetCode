@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int dp[40000] = {};
+    int dp[4000] = {};
 
     int helper(int i, const string& s) {
         if (dp[i] == 0) {
