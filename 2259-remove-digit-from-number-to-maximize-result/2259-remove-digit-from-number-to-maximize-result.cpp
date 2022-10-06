@@ -19,8 +19,6 @@ public:
             temp = number.substr(0, i);
             temp += number.substr(i + 1, number.size() - i - 1);
             
-            //cout << ans << " " << temp << endl;
-            
             ans = max(ans, temp);
             
             i--;
