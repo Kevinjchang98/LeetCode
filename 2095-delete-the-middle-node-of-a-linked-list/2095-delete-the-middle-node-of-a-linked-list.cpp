@@ -15,24 +15,15 @@ public:
             return nullptr;
         
         ListNode* s = head;
-        ListNode* f = head;
+        ListNode* f = head->next->next;
+    
         
-        int i = 0;
-        
-        while (f->next) {
-            if (++i % 2 == 0 && i > 2)
-                s = s->next;
-            f = f->next;
+        while (f && f->next) {
+            s = s->next;
+            f = f->next->next;
         }
         
-        cout << s->val << " " << i << endl;
-        
-        if (i % 2 == 0)
-            s->next = s->next->next;
-        else if (s->next->next)
-            s->next->next = s->next->next->next;
-        else if (s == head)
-            s->next = nullptr;
+        s->next = s->next->next;
         
         return head;
     }
