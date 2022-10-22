@@ -14,7 +14,7 @@ public:
         if (lists.size() == 0)
             return nullptr;
         
-        auto comp = [&](ListNode* a, ListNode* b) { return a->val > b->val; };
+        auto comp = [&](ListNode* a, ListNode* b) { return a->val < b->val; };
         
         priority_queue<ListNode*, vector<ListNode*>, decltype(comp)> q(comp);
         
@@ -34,16 +34,11 @@ public:
             }
         }
         
-        if (q.size() == 0)
-            return nullptr;
-        
-        ListNode* curr = q.top();
-        ListNode* ans = curr;
-        q.pop();
+        ListNode* ans = nullptr;
         
         while (!q.empty()) {
-            curr->next = q.top();
-            curr = curr->next;
+            q.top()->next = ans;
+            ans = q.top();
             q.pop();
         }
         
