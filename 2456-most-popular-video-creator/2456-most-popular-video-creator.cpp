@@ -23,7 +23,6 @@ public:
                 return pa.second < pb.second;
         };
         
-        
         auto maxCreator = *max_element(vm.begin(), vm.end(), compCreator);
         
         vector<string> maxCreators;
@@ -32,8 +31,6 @@ public:
             if (c.second == maxCreator.second)
                 maxCreators.push_back(c.first);
         }
-        
-        sort(maxCreators.begin(), maxCreators.end());
         
         vector<vector<string>> ans;
         
