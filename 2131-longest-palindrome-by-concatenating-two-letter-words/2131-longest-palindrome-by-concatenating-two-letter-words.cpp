@@ -11,15 +11,13 @@ public:
             if (s[comp] > 0) {
                 ans += 4;
                 s[comp]--;
-            } else {
+            } else
                 s[w]++;
-            }
         }
         
-        for (auto w : s) {
+        for (auto w : s)
             if (w.second > 0 && w.first[0] == w.first[1])
                 return ans + 2;
-        }
         
         return ans;
     }
