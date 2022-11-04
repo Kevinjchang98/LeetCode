@@ -1,11 +1,6 @@
 class Solution {
 public:
     string longestPalindrome(string s) {
-        if (s.size() == 1)
-            return s;
-        else if (s.size() == 2 && s[0] == s[1])
-            return s;
-        
         string ans = "";
         
         auto find = [&s](int l, int r) {
